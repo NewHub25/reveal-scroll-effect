@@ -1,0 +1,70 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #eee;
+  background-color: #222;
+}
+.section-img {
+  padding: 3rem;
+  text-align: center;
+  img {
+    border: 5px solid #0090de;
+    border-radius: 1rem;
+    cursor: text;
+    width: min(800px, 80vw);
+  }
+}
+main {
+  padding: 0 20vw;
+}
+article {
+  margin: 3rem 0;
+  font-size: 1.1rem;
+  line-height: 2rem;
+  h2 {
+    margin-bottom: 2rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+}
+.scroll {
+  outline: 1px solid #fff;
+  padding: 5rem;
+  border-radius: 1rem;
+  margin-bottom: 5rem;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  h2 {
+    margin-bottom: 1rem;
+  }
+  p {
+    line-height: 2rem;
+  }
+}
+.scroll span {
+  color: hsla(0, 0%, 100%, 0.2);
+  background-image: linear-gradient(135deg, white, white);
+  background-clip: text;
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  animation: scroll-reveal linear forwards;
+  animation-timeline: view();
+}
+.scroll h2 span {
+  animation-range-start: cover 20vh;
+  animation-range-end: cover 25vh;
+}
+.scroll p span {
+  animation-range-start: cover 25vh;
+  animation-range-end: cover 50vh;
+}
+@keyframes scroll-reveal {
+  to {
+    background-size: 100% 100%;
+  }
+}
