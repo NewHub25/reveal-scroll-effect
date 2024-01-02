@@ -1,4 +1,6 @@
-
+:root {
+  scroll-behavior: smooth;
+}
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +10,13 @@ body {
   color: #eee;
   background-color: #222;
 }
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 3rem auto 1rem;
+  text-decoration: underline;
+  letter-spacing: 0.5rem;
+}
 .section-img {
   padding: 3rem;
   text-align: center;
@@ -15,7 +24,11 @@ body {
     border: 5px solid #0090de;
     border-radius: 1rem;
     cursor: text;
-    width: min(800px, 80vw);
+    width: min(700px, 70vw);
+    transition: scale 500ms ease-in-out;
+    &:hover {
+      scale: 1.1;
+    }
   }
 }
 main {
@@ -49,7 +62,7 @@ article {
 }
 .scroll span {
   color: hsla(0, 0%, 100%, 0.2);
-  background-image: linear-gradient(135deg, white, white);
+  background-image: linear-gradient(135deg, #0090de, blue);
   background-clip: text;
   background-repeat: no-repeat;
   background-size: 0% 100%;
@@ -71,24 +84,49 @@ article {
 }
 .bar {
   width: 100%;
-  height: 10px;
+  height: 0.3rem;
   position: fixed;
   top: 0;
   left: 0;
-
+  z-index: 1000;
+  border-radius: 0 1rem 1rem 0;
+  /* scroll animation */
   animation-name: scrollFrames;
   animation-timeline: scroll(root block);
   animation-timing-function: linear;
   animation-range: 10% 100%;
 }
-
 @keyframes scrollFrames {
   from {
     width: 0;
-    background-color: green;
+    background-color: yellow;
   }
   to {
     width: 100%;
-    background-color: crimson;
+    background-color: lime;
+  }
+}
+
+.img-java {
+  text-align: center;
+}
+.img-java img {
+  height: 40vh;
+  border-radius: 1rem;
+  border: 3px double #0090de;
+  /* view animation */
+  animation-timeline: view(y 70% auto);
+  animation-name: viewFrames;
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0.1, 1, 0.7, 1);
+}
+@keyframes viewFrames {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
   }
 }
