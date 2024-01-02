@@ -1,3 +1,6 @@
+:root {
+  scroll-timeline: --scrolly y;
+}
 * {
   padding: 0;
   margin: 0;
@@ -66,5 +69,28 @@ article {
 @keyframes scroll-reveal {
   to {
     background-size: 100% 100%;
+  }
+}
+.bar {
+  width: 100%;
+  height: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  animation-name: scrollFrames;
+  animation-timeline: --scrolly;
+  animation-timing-function: linear;
+  animation-range: 10% 100%;
+}
+
+@keyframes scrollFrames {
+  from {
+    width: 0;
+    background-color: green;
+  }
+  to {
+    width: 100%;
+    background-color: crimson;
   }
 }
