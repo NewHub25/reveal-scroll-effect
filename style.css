@@ -31,11 +31,8 @@ h1 {
     }
   }
 }
-main {
-  padding: 0 20vw;
-}
 article {
-  margin: 3rem 0;
+  margin: 3rem 20vw;
   font-size: 1.1rem;
   line-height: 2rem;
   h2 {
@@ -46,10 +43,9 @@ article {
   }
 }
 .scroll {
-  outline: 1px solid #fff;
-  padding: 5rem;
   border-radius: 1rem;
-  margin-bottom: 5rem;
+  padding: 2rem 20vw;
+  margin: 5rem 0;
   text-align: center;
   font-weight: bolder;
   font-size: 1.5rem;
@@ -59,23 +55,39 @@ article {
   p {
     line-height: 2rem;
   }
+  display: flex;
+  overflow-y: scroll;
+  height: 300px;
+  position: relative;
+  scrollbar-width: none;
+}
+.scroll::-webkit-scrollbar {
+  display: none;
+}
+.strecher {
+  height: 2000px;
+}
+.steady {
+  position: sticky;
+  top: 0;
 }
 .scroll span {
   color: hsla(0, 0%, 100%, 0.2);
-  background-image: linear-gradient(135deg, #0090de, blue);
+  background-color: #ddd;
+  background-image: linear-gradient(135deg, crimson, blue, crimson);
   background-clip: text;
   background-repeat: no-repeat;
   background-size: 0% 100%;
   animation: scroll-reveal linear forwards;
-  animation-timeline: view();
+  animation-timeline: scroll(nearest y);
 }
 .scroll h2 span {
-  animation-range-start: cover 20vh;
-  animation-range-end: cover 25vh;
+  animation-range-start: cover 0%;
+  animation-range-end: cover 10%;
 }
 .scroll p span {
-  animation-range-start: cover 25vh;
-  animation-range-end: cover 50vh;
+  animation-range-start: cover 20%;
+  animation-range-end: cover 100%;
 }
 @keyframes scroll-reveal {
   to {
@@ -108,14 +120,13 @@ article {
 }
 
 .img-java {
-  text-align: center;
-}
-.img-java img {
-  height: 40vh;
+  float: left;
+  margin: 0 1rem 0.5rem 0;
+  height: 30vh;
   border-radius: 1rem;
   border: 3px double #0090de;
   /* view animation */
-  animation-timeline: view(y 70% auto);
+  animation-timeline: view(y 50% auto);
   animation-name: viewFrames;
   animation-fill-mode: both;
   animation-timing-function: cubic-bezier(0.1, 1, 0.7, 1);
